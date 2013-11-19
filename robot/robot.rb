@@ -17,7 +17,24 @@ class Robot
   # a robot should be very miserable if its on or before the 15th AND
   # the temperature is 70 degrees or colder
   def temperature(my_temperature)
-    # code goes here
+    if date > 15
+      if my_temperature > 70 && my_temperature <= 100
+        "I am happy"
+      elsif my_temperature > 100
+        "I am very happy"
+      else
+        "I am miserable"
+      end
+
+    if date =< 15
+      if my_temperature > 70 && my_temperature =< 100
+        "I am sad"
+      elsif my_temperature > 100
+        "I am very sad"
+      else
+        "I am very miserable"
+      end
+    end
   end
 
   # if your name begins with the letters a-j
@@ -29,8 +46,26 @@ class Robot
   # and if that is greater than or equal to 50 your robots optimal weight is 0
   # if that is less than 50 your robots optimal weight is 1000
 
+
+  # ******for some reason the test file is only passing optimal_weight one argument (weight), while this file 
+  #came optimal_weight having two args (my_weight and my_name), so tests aren't passing
   def optimal_weight(my_weight, my_name)
-    # code goes here
+    a_j = ("a".."j").to_a
+
+    if a_j.include?(my_name) 
+      optimal_weight = my_weight - 100
+      if optimal_weight > 30
+        optimal_weight = 300
+      end
+    else
+      optimal_weight = my_weight + 46
+      if optimal_weight >= 50
+        optimal_weight = 0
+      else
+        optimal_weight = 100
+      end
+    end
+
   end
   
   # your robots optimal height is your arm_length (estimated) multiplied by 50

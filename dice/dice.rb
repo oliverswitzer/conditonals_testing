@@ -6,7 +6,7 @@
 class Dice
 
   def roll
-    # code goes here
+    rand(1...7)
   end
 
 end
